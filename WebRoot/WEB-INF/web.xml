@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance 
+					http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://xmlns.jcp.org/xml/ns/javaee
+		 	    http://java.sun.com/xml/ns/j2ee" 
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd
+		 					http://java.sun.com/xml/ns/j2ee 
+       					    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="3.1">
+  <display-name>tmall</display-name>
+<!--Filter                                            Filter-->
+<!--Filter                                            Filter-->
+  <filter>
+  	<filter-name>loginFilter</filter-name>
+  	<filter-class>com.tmall.web.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>loginFilter</filter-name>
+  	<url-pattern>/forebuy</url-pattern>
+  </filter-mapping>
+  
+    <filter>
+  	<filter-name>BackServletFilter</filter-name>
+  	<filter-class>com.tmall.web.filter.BackServletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>BackServletFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+<!--servlet                                            servlet-->
+<!--servlet                                            servlet--> 
+  <servlet>
+  	<servlet-name>loginService</servlet-name>
+  	<servlet-class>com.tmall.web.service.loginService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>loginService</servlet-name>
+  		<url-pattern>/loginService</url-pattern>
+  </servlet-mapping>
+    <servlet>
+  	<servlet-name>registerService</servlet-name>
+  	<servlet-class>com.tmall.web.service.RegisterService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>registerService</servlet-name>
+  		<url-pattern>/registerService</url-pattern>
+  </servlet-mapping>
+  
+  
+<servlet>
+  	<servlet-name>searchService</servlet-name>
+  	<servlet-class>com.tmall.web.service.SearchService</servlet-class>
+</servlet>
+  <servlet-mapping>
+  		<servlet-name>searchService</servlet-name>
+  		<url-pattern>/searchService</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>index</servlet-name>
+  	<servlet-class>com.tmall.web.service.HomeService</servlet-class>
+</servlet>
+  <servlet-mapping>
+  		<servlet-name>index</servlet-name>
+  		<url-pattern></url-pattern>
+  </servlet-mapping>
+ <servlet> 
+    	<servlet-name>product</servlet-name>
+  	<servlet-class>com.tmall.web.service.ProductService</servlet-class>
+</servlet>
+  <servlet-mapping>
+  		<servlet-name>product</servlet-name>
+  		<url-pattern>/product</url-pattern>
+  </servlet-mapping>
+<servlet> 
+    	<servlet-name>category</servlet-name>
+  	<servlet-class>com.tmall.web.service.CategoryService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>category</servlet-name>
+  		<url-pattern>/category</url-pattern>
+</servlet-mapping>
+  
+<servlet> 
+    	<servlet-name>forebuy</servlet-name>
+  	<servlet-class>com.tmall.web.service.ForeBuyService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>forebuy</servlet-name>
+  		<url-pattern>/forebuy</url-pattern>
+</servlet-mapping>
+
+<servlet> 
+    	<servlet-name>CreateOrder</servlet-name>
+  	<servlet-class>com.tmall.web.service.CreateOrder</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>CreateOrder</servlet-name>
+  		<url-pattern>/createOrder</url-pattern>
+</servlet-mapping>
+ 
+<servlet> 
+    	<servlet-name>payed</servlet-name>
+  	<servlet-class>com.tmall.web.service.PayedService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>payed</servlet-name>
+  		<url-pattern>/payed</url-pattern>
+</servlet-mapping>
+
+<servlet> 
+    	<servlet-name>myOrder</servlet-name>
+  	<servlet-class>com.tmall.web.service.OrderService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>myOrder</servlet-name>
+  		<url-pattern>/myOrder</url-pattern>
+</servlet-mapping>
+  <servlet> 
+    	<servlet-name>alipay</servlet-name>
+  	<servlet-class>com.tmall.web.service.AliPayService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>alipay</servlet-name>
+  		<url-pattern>/alipay</url-pattern>
+</servlet-mapping>
+    <servlet> 
+    	<servlet-name>delivery</servlet-name>
+  	<servlet-class>com.tmall.web.service.DeliveryService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>delivery</servlet-name>
+  		<url-pattern>/delivery</url-pattern>
+</servlet-mapping>
+<servlet> 
+    	<servlet-name>review</servlet-name>
+  	<servlet-class>com.tmall.web.service.ReviewService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>review</servlet-name>
+  		<url-pattern>/review</url-pattern>
+</servlet-mapping>
+<servlet> 
+    	<servlet-name>doreview</servlet-name>
+  	<servlet-class>com.tmall.web.service.DoReviewService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>doreview</servlet-name>
+  		<url-pattern>/doreview</url-pattern>
+</servlet-mapping>
+<servlet> 
+    	<servlet-name>categoryService</servlet-name>
+  		<servlet-class>com.tmall.web.admin.CategoryService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>categoryService</servlet-name>
+  		<url-pattern>/categoryService</url-pattern>
+</servlet-mapping>
+<servlet> 
+    	<servlet-name>userService</servlet-name>
+  		<servlet-class>com.tmall.web.admin.UserService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>userService</servlet-name>
+  		<url-pattern>/userService</url-pattern>
+</servlet-mapping>
+<servlet> 
+    	<servlet-name>orderService</servlet-name>
+  		<servlet-class>com.tmall.web.admin.OrderService</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>orderService</servlet-name>
+  		<url-pattern>/orderService</url-pattern>
+</servlet-mapping>
+<servlet> 
+    	<servlet-name>confirmPay</servlet-name>
+  		<servlet-class>com.tmall.web.service.ConfirmPay</servlet-class>
+</servlet>
+<servlet-mapping>
+  		<servlet-name>confirmPay</servlet-name>
+  		<url-pattern>/confirmPay</url-pattern>
+</servlet-mapping>
+
+
+
+</web-app>
